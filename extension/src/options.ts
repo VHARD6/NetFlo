@@ -38,10 +38,10 @@ async function renderConnection(): Promise<void> {
   element('dot').className = `dot ${reached === 'ok' ? 'ok' : reached === 'update' ? 'warn' : ''}`
   element('connection').textContent =
     reached === 'ok'
-      ? 'Connected to Plexo'
+      ? 'Connected to NetFlo'
       : reached === 'update'
-        ? 'Update Plexo to use this extension'
-        : 'Plexo isn’t open'
+        ? 'Update NetFlo to use this extension'
+        : 'NetFlo isn’t open'
   element('open-plexo').hidden = reached !== 'closed'
   const port = plexoPort()
   element('port').textContent = port === null ? '' : `127.0.0.1:${port}`

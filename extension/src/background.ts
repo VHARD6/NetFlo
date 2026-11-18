@@ -17,12 +17,12 @@ async function showState(reached?: Reach): Promise<void> {
   const { capture } = await loadSettings()
   reached ??= await reach()
   const title = !capture
-    ? 'Plexo: capture is off'
+    ? 'NetFlo: capture is off'
     : reached === 'closed'
-      ? 'Plexo isn’t open: downloads stay in the browser'
+      ? 'NetFlo isn’t open: downloads stay in the browser'
       : reached === 'update'
-        ? 'Update Plexo to use this extension'
-        : 'Plexo'
+        ? 'Update NetFlo to use this extension'
+        : 'NetFlo'
   await api.action.setIcon({ path: capture && reached === 'ok' ? ICON : ICON_OFF })
   await api.action.setTitle({ title })
 }
@@ -116,7 +116,7 @@ function createMenu(): void {
   void api.contextMenus
     .removeAll()
     .then(() =>
-      api.contextMenus.create({ id: MENU_ID, title: 'Download with Plexo', contexts: ['link'] })
+      api.contextMenus.create({ id: MENU_ID, title: 'Download with NetFlo', contexts: ['link'] })
     )
 }
 

@@ -1,12 +1,10 @@
-# Contributing to Plexo
+# Contributing to NetFlo
 
-Thanks for taking a look at Plexo. It's a small project, so the process is intentionally lightweight.
+Thanks for taking a look at NetFlo. It's an open-source project derived from Plexo.
 
 ## Setup
 
 ```bash
-git clone https://github.com/anmolkapil/plexo.git
-cd plexo
 npm ci
 npm run dev
 ```
@@ -17,8 +15,8 @@ Requires Node.js 22.13+ and npm 9+, on Windows, macOS, or Linux.
 
 Run packaging commands on the corresponding operating system. Packages are written to `dist/`.
 
-- **macOS**: `npm run build:mac` creates Intel and Apple silicon `.dmg` and `.zip` packages. Unpacked apps are in `dist/mac/Plexo.app` and `dist/mac-arm64/Plexo.app`.
-- **Windows**: `npm run build:win` creates one installer for x64 and ARM64. `npm run build:unpack` creates an unpacked app for the current architecture; run `dist/win-unpacked/plexo.exe`.
+- **macOS**: `npm run build:mac` creates Intel and Apple silicon `.dmg` and `.zip` packages. Unpacked apps are in `dist/mac/NetFlo.app` and `dist/mac-arm64/NetFlo.app`.
+- **Windows**: `npm run build:win` creates one installer for x64 and ARM64. `npm run build:unpack` creates an unpacked app for the current architecture; run `dist/win-unpacked/netflo.exe`.
 - **Linux**: `npm run build:linux` creates AppImage, `.deb`, `.rpm` and `.tar.gz` packages for x86_64 and ARM64. RPM packaging requires `rpmbuild`; the release workflow installs it through the `rpm` package.
 
 Local builds are unsigned unless signing credentials are configured.
@@ -35,7 +33,7 @@ For Chrome, enable **Developer mode** at `chrome://extensions`, choose **Load un
 
 For Firefox, open `about:debugging#/runtime/this-firefox`, choose **Load Temporary Add-on**, and select `extension/dist/firefox/manifest.json`. Temporary add-ons are removed when Firefox restarts.
 
-Keep Plexo running to test download capture. Rebuild and reload the extension after changing its source.
+Keep NetFlo running to test download capture. Rebuild and reload the extension after changing its source.
 
 ## Before opening a PR
 
@@ -80,7 +78,7 @@ Tests build the app first; set `PLEXO_E2E_SKIP_BUILD=1` when `out/` is already f
 
 ## Releasing
 
-A release ships Plexo for macOS (Apple silicon and Intel `.dmg`), Windows (one installer for x64 and ARM64) and Linux (AppImage, `.deb`, `.rpm` and `.tar.gz`, x86_64 and ARM64). The download page (`docs/`, served by GitHub Pages) reads them from the latest GitHub Release and labels each one from its file name (`docs/downloads.js`), so keep the naming in `electron-builder.yml` intact.
+A release ships NetFlo for macOS (Apple silicon and Intel `.dmg`), Windows (one installer for x64 and ARM64) and Linux (AppImage, `.deb`, `.rpm` and `.tar.gz`, x86_64 and ARM64). The download page (`docs/`, served by GitHub Pages) reads them from the latest GitHub Release and labels each one from its file name (`docs/downloads.js`), so keep the naming in `electron-builder.yml` intact.
 
 First bump the version and add its entry at the top of `docs/changelog.js`, in one PR. The entry becomes the release notes, and a tag without one stops before building.
 
@@ -91,7 +89,7 @@ git checkout main && git pull
 git tag v<version> && git push origin v<version>
 ```
 
-The tag runs `.github/workflows/release.yml`: it builds every OS and leaves a draft GitHub Release with the changelog entry and the downloads table. Check the draft and publish it. Publishing is what ships it: it becomes the Latest release, and within a few hours every running Plexo downloads it in the background and offers a restart. Leave rc releases unmarked as pre-release: the app only updates to Latest, which a pre-release never is. Mark one pre-release (a beta after 1.0, say) to keep it from everyone's automatic updates. A build to throw away? Delete the draft and the tag.
+The tag runs `.github/workflows/release.yml`: it builds every OS and leaves a draft GitHub Release with the changelog entry and the downloads table. Check the draft and publish it. Publishing is what ships it: it becomes the Latest release, and within a few hours every running NetFlo downloads it in the background and offers a restart. Leave rc releases unmarked as pre-release: the app only updates to Latest, which a pre-release never is. Mark one pre-release (a beta after 1.0, say) to keep it from everyone's automatic updates. A build to throw away? Delete the draft and the tag.
 
 Besides the downloads, a release carries what the app's updater reads (`src/main/updater.ts`): the `latest*.yml` channel files, the macOS `.zip`s and the blockmaps. `scripts/release-notes.mjs --files` lists them; the download page ignores them.
 

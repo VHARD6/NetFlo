@@ -1,6 +1,6 @@
 # The labels on the field headings are read by .github/workflows/issue-labels.yml.
 name: Question
-description: Ask how to use or set up Plexo.
+description: Ask how to use or set up NetFlo.
 labels: [question, needs-triage]
 body:
   - type: textarea
@@ -22,5 +22,5 @@ body:
   - type: input
     id: version
     attributes:
-      label: Plexo version
-      placeholder: 1.0.0-rc.15
+      label: NetFlo version
+      placeholder: 1.0.0

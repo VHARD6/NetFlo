@@ -7,12 +7,12 @@ Please don't open a public issue for a security problem. Report it privately thr
 A useful report includes:
 
 - what an attacker can do, and what they need first (a crafted link or file, a malicious website, code already running on the computer)
-- the steps or a small test that shows it, and the Plexo version and operating system
+- the steps or a small test that shows it, and the NetFlo version and operating system
 - a suggested fix, if you have one
 
 ## What to expect
 
-Plexo is maintained by one person, so these are aims rather than promises:
+NetFlo aims to address security reports promptly:
 
 - a reply within a week
 - an assessment, and a planned fix or an explanation, within a few weeks
@@ -22,18 +22,17 @@ The advisory is published once the fix has been released, with credit to you unl
 
 ## Supported versions
 
-Only the latest release gets security fixes. Plexo updates itself, so most people are already on it.
+Only the latest release gets security fixes. NetFlo updates itself, so most people are already on it.
 
 ## Scope
 
 In scope:
 
-- the Plexo app for macOS, Windows, and Linux, including its download, torrent, and update code
+- the NetFlo app for macOS, Windows, and Linux, including its download, torrent, and update code
 - the browser extension in `extension/`
 - the release workflows and build setup in this repository
 
 Out of scope:
 
-- the getplexo.app landing page, unless the problem affects people downloading Plexo
-- problems in a dependency that Plexo doesn't expose (please report those upstream)
-- a malicious server sending the wrong content for a link you chose to download, unless Plexo makes it worse (for example, by writing outside the folder you picked)
+- problems in upstream Plexo or a dependency that NetFlo doesn't expose (please report those upstream at https://github.com/anmolkapil/plexo/security)
+- a malicious server sending the wrong content for a link you chose to download, unless NetFlo makes it worse (for example, by writing outside the folder you picked)

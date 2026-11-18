@@ -12,7 +12,7 @@ export const BRIDGE_API = 1
 export const BRIDGE_DEADLINE_MS = 8000
 
 export interface BridgePing {
-  app: 'plexo'
+  app: 'plexo' | 'netflo'
   version: string
   api: number
 }

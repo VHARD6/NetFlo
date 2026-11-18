@@ -137,7 +137,7 @@ export class NzbTransfer implements Transfer {
         (server) => {
           if (this.runtime.stop.signal.aborted) return
           if (!server) {
-            this.host.failDownload('Set up a news server in Plexo to download from Usenet.')
+            this.host.failDownload('Set up a news server in NetFlo to download from Usenet.')
             return
           }
           if (!server.enabled) {
@@ -782,7 +782,7 @@ export class NzbTransfer implements Transfer {
     }
     const unreachable = this.backupUnreachable()
     if (unreachable) {
-      this.runtime.state.backupError = `The backup server can’t be reached. Plexo keeps trying. (${message(error)})`
+      this.runtime.state.backupError = `The backup server can’t be reached. NetFlo keeps trying. (${message(error)})`
       // Down to one connection.
       this.host.reconcile()
     }

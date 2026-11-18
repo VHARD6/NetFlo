@@ -77,10 +77,10 @@ function menuItems(): MenuItemConstructorOptions[] {
   } else if (status === 'downloading') {
     items.push({ label: `Downloading ${version}…`, enabled: false })
   } else if (status === 'available') {
-    items.push({ label: `Download Plexo ${version}`, click: download })
+    items.push({ label: `Download NetFlo ${version}`, click: download })
   } else if (status === 'error') {
     items.push({
-      label: `Get Plexo ${version} from the Website…`,
+      label: `Get NetFlo ${version} from the Website…`,
       click: () => void shell.openExternal(DOWNLOAD_PAGE)
     })
   }
@@ -149,7 +149,7 @@ export function startUpdater(window: () => BrowserWindow | null, autoUpdate: boo
   autoUpdater.on('checking-for-update', () => set({ status: 'checking' }))
   autoUpdater.on('update-not-available', () => {
     set({ status: 'idle', version: undefined })
-    answer('You’re up to date', `Plexo ${app.getVersion()} is the newest version.`)
+    answer('You’re up to date', `NetFlo ${app.getVersion()} is the newest version.`)
   })
   autoUpdater.on('update-available', ({ version }) => {
     asked = false

@@ -139,10 +139,13 @@ export type PlexoApi = typeof plexoApi
 if (process.contextIsolated) {
   try {
     contextBridge.exposeInMainWorld('plexo', plexoApi)
+    contextBridge.exposeInMainWorld('netflo', plexoApi)
   } catch (error) {
     console.error(error)
   }
 } else {
   // @ts-ignore (define in dts)
   window.plexo = plexoApi
+  // @ts-ignore (define in dts)
+  window.netflo = plexoApi
 }

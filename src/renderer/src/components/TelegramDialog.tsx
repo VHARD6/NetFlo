@@ -75,7 +75,7 @@ function TelegramPanel({ onDone }: { onDone: () => void }): React.JSX.Element {
           </div>
         </div>
         <p className="mt-1.5 text-[12px] leading-[1.5] text-[var(--text-secondary)]">
-          Plexo is an unofficial Telegram client: signing in grants it full access to your account,
+          NetFlo is an unofficial Telegram client: signing in grants it full access to your account,
           though it reads nothing but Saved Messages.
         </p>
       </div>
@@ -277,7 +277,7 @@ function TelegramLogin({ auth }: { auth: TelegramAuthState }): React.JSX.Element
     >
       {needsApiFields ? (
         <p className="text-[12.5px] leading-[1.5]">
-          Plexo needs an <span className="font-medium">api_id</span> and{' '}
+          NetFlo needs an <span className="font-medium">api_id</span> and{' '}
           <span className="font-medium">api_hash</span> of your own: create an app at
           my.telegram.org → API development tools, and enter them here with your phone number.
         </p>
@@ -333,7 +333,7 @@ function TelegramLogin({ auth }: { auth: TelegramAuthState }): React.JSX.Element
           size="xs"
           onClick={() => setShowApi((shown) => !shown)}
         >
-          {showApi ? 'Use Plexo’s api keys instead' : 'Use your own api keys (advanced)'}
+          {showApi ? 'Use NetFlo’s api keys instead' : 'Use your own api keys (advanced)'}
         </Button>
       )}
       {auth.error && (

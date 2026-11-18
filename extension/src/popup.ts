@@ -20,9 +20,9 @@ async function render(): Promise<void> {
   ])
   const [tone, text] =
     reached === 'closed'
-      ? ['', 'Plexo not open']
+      ? ['', 'NetFlo not open']
       : reached === 'update'
-        ? ['warn', 'Update Plexo']
+        ? ['warn', 'Update NetFlo']
         : settings.capture
           ? ['ok', 'Connected']
           : ['', 'Capture off']
@@ -33,7 +33,7 @@ async function render(): Promise<void> {
 
   element<HTMLInputElement>('capture').checked = settings.capture
   element('capture-hint').textContent = settings.capture
-    ? 'Downloads open in Plexo instead of the browser.'
+    ? 'Downloads open in NetFlo instead of the browser.'
     : 'Downloads stay in the browser.'
 
   element('site-row').hidden = host === null
@@ -46,7 +46,7 @@ async function render(): Promise<void> {
     element('site-hint').textContent = !settings.capture
       ? 'Capture is off everywhere.'
       : on
-        ? 'Downloads from this site go to Plexo.'
+        ? 'Downloads from this site go to NetFlo.'
         : 'Downloads from this site stay in the browser.'
   }
 }

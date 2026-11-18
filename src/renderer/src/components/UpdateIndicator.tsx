@@ -9,15 +9,15 @@ function describe({ status, version, percent, autoUpdate }: UpdateState): string
     case 'checking':
       return 'Checking for updates…'
     case 'available':
-      return `Plexo ${version} is available`
+      return `NetFlo ${version} is available`
     case 'downloading':
-      return `Downloading Plexo ${version}… ${percent}%`
+      return `Downloading NetFlo ${version}… ${percent}%`
     case 'ready':
-      return `Plexo ${version} is ready — restart to update`
+      return `NetFlo ${version} is ready — restart to update`
     case 'error':
-      return `Couldn’t install Plexo ${version}`
+      return `Couldn’t install NetFlo ${version}`
     default:
-      return autoUpdate ? 'Plexo updates automatically' : 'Automatic updates are off'
+      return autoUpdate ? 'NetFlo updates automatically' : 'Automatic updates are off'
   }
 }
 

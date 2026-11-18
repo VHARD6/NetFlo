@@ -1,7 +1,7 @@
-appId: com.plexo.app
-productName: Plexo
+appId: com.netflo.app
+productName: NetFlo
 # Shown in the macOS About window and Finder's Get Info, and in the Windows file properties.
-copyright: Copyright © 2026 Anmol Kapil
+copyright: Copyright © 2026 Anmol Kapil, NetFlo Contributors
 afterPack: scripts/check-torrent-package.mjs
 directories:
   buildResources: build
@@ -23,10 +23,10 @@ files:
 asarUnpack:
   - resources/**
 win:
-  # No protocols or fileAssociations: the NSIS installer would register Plexo as *the* handler for
+  # No protocols or fileAssociations: the NSIS installer would register NetFlo as *the* handler for
   # magnet links and .torrent files, taking them from a torrent client the user already has.
-  # A .torrent can still be opened with Plexo through "Open with".
-  executableName: plexo
+  # A .torrent can still be opened with NetFlo through "Open with".
+  executableName: netflo
   target:
     - target: nsis
       arch: [x64, arm64]
@@ -52,15 +52,15 @@ mac:
       arch: [x64, arm64]
   entitlementsInherit: build/entitlements.mac.plist
   extendInfo:
-    - NSDownloadsFolderUsageDescription: Plexo saves downloaded files to your Downloads folder.
-    # Magnet links, .torrent and .nzb files can be opened with Plexo, as one choice among others:
+    - NSDownloadsFolderUsageDescription: NetFlo saves downloaded files to your Downloads folder.
+    # Magnet links, .torrent and .nzb files can be opened with NetFlo, as one choice among others:
     # it's never made the default over a client the user already has (LSHandlerRank).
-    # plexo:// is Plexo's own scheme, so registering it takes nothing from another app.
+    # netflo:// is NetFlo's own scheme, so registering it takes nothing from another app.
     - CFBundleURLTypes:
         - CFBundleURLName: Magnet link
           CFBundleURLSchemes: [magnet]
-        - CFBundleURLName: Plexo
-          CFBundleURLSchemes: [plexo]
+        - CFBundleURLName: NetFlo
+          CFBundleURLSchemes: [netflo, plexo]
       CFBundleDocumentTypes:
         - CFBundleTypeName: Torrent
           CFBundleTypeRole: Viewer
@@ -85,7 +85,7 @@ linux:
     - target: rpm
       arch: [x64, arm64]
     # Plain archive for distros without FUSE or a native package (AUR packagers, NixOS, etc.):
-    # extract and run ./plexo. Doesn't update itself, like the .deb and .rpm.
+    # extract and run ./netflo. Doesn't update itself, like the .deb and .rpm.
     - target: tar.gz
       arch: [x64, arm64]
   # Names the .tar.gz, which has no options of its own. Without it the x64 archive would carry no
@@ -96,7 +96,7 @@ linux:
   category: Utility
   # Offered for magnet links, .torrent and .nzb files ("Open with"), not made their default.
   mimeTypes:
-    [x-scheme-handler/magnet, application/x-bittorrent, application/x-nzb, x-scheme-handler/plexo]
+    [x-scheme-handler/magnet, application/x-bittorrent, application/x-nzb, x-scheme-handler/netflo, x-scheme-handler/plexo]
 appImage:
   artifactName: ${name}-${version}-${arch}.${ext}
 deb:

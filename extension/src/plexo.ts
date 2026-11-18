@@ -20,7 +20,7 @@ async function ask(port: number): Promise<Reach> {
       signal: AbortSignal.timeout(1500)
     })
     const ping = (await response.json()) as Partial<BridgePing>
-    if (!response.ok || ping.app !== 'plexo') return 'closed'
+    if (!response.ok || (ping.app !== 'plexo' && ping.app !== 'netflo')) return 'closed'
     return ping.api === BRIDGE_API ? 'ok' : 'update'
   } catch {
     return 'closed'
@@ -149,11 +149,19 @@ function browserName(): string {
 
 /** Only ever on a click: the browser asks the user whether to open the app. */
 export async function wake(): Promise<boolean> {
-  const tab = await api.tabs.create({ url: 'plexo://open' })
+  const tab = await api.tabs.create({ url: 'netflo://open' })
   let reached = false
   for (let tries = 0; tries < 20 && !reached; tries++) {
     await new Promise((resolve) => setTimeout(resolve, 500))
     reached = (await reach()) === 'ok'
+  }
+  if (!reached) {
+    const fallbackTab = await api.tabs.create({ url: 'plexo://open' })
+    for (let tries = 0; tries < 10 && !reached; tries++) {
+      await new Promise((resolve) => setTimeout(resolve, 500))
+      reached = (await reach()) === 'ok'
+    }
+    if (reached && fallbackTab.id !== undefined) await api.tabs.remove(fallbackTab.id).catch(() => {})
   }
   if (reached && tab.id !== undefined) await api.tabs.remove(tab.id).catch(() => {})
   return reached

@@ -15,7 +15,7 @@ export function TitleBar(): React.JSX.Element {
       }`}
     >
       <div className="truncate font-sans text-[13px] leading-none font-semibold text-[var(--text-secondary)]">
-        Plexo
+        NetFlo
       </div>
     </div>
   )

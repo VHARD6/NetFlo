@@ -7,3 +7,10 @@ out
 test-results
 playwright-report
 *.tsbuildinfo
+.env
+.env.*
+*.env
+.vscode/
+.idea/
+release/
+*.local

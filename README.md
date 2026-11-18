@@ -13,31 +13,15 @@
 
 <p align="center">
   <a href="#features">Features</a> ·
-  <a href="#troubleshooting">Troubleshooting</a> ·
   <a href="#how-it-works">How it works</a> ·
-  <a href="#build-from-source">Build</a>
+  <a href="ARCHITECTURE.md">Architecture</a> ·
+  <a href="#build-from-source">Build</a> ·
+  <a href="#troubleshooting">Troubleshooting</a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/anmolkapil/plexo/releases/latest"><img src="https://img.shields.io/github/v/release/anmolkapil/plexo?label=release" alt="Latest release"></a>
-  <a href="https://github.com/anmolkapil/plexo/releases"><img src="https://img.shields.io/github/downloads/anmolkapil/plexo/total" alt="Downloads"></a>
-  <a href="https://github.com/anmolkapil/plexo/actions/workflows/ci.yml"><img src="https://github.com/anmolkapil/plexo/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI status"></a>
-  <a href="https://getplexo.app/#downloads"><img src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-black" alt="macOS, Windows and Linux"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/github/license/anmolkapil/plexo" alt="MIT license"></a>
-</p>
-
-<p align="center">
-  <a href="https://ko-fi.com/I5Q128RXSP"><img src="https://storage.ko-fi.com/cdn/kofi6.png" height="48" alt="Buy me a coffee on Ko-fi"></a>
-</p>
-
-<p align="center">
-  For anything private, email <a href="mailto:hello@getplexo.app"><strong>hello@getplexo.app</strong></a>
-</p>
-
-<p align="center">
-  <a href="https://trendshift.io/repositories/240800?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-240800" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/240800/daily?language=TypeScript" alt="anmolkapil%2Fplexo | Trendshift" width="250" height="55"/></a>
-  <a href="https://trendshift.io/repositories/240800?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-240800" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/240800/daily" alt="anmolkapil%2Fplexo | Trendshift" width="250" height="55"/></a>
-  <a href="https://trendshift.io/repositories/240800?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-240800" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/240800/weekly?language=TypeScript" alt="anmolkapil%2Fplexo | Trendshift" width="250" height="55"/></a>
+  <a href="https://github.com/VHARD6/NetFlo/releases"><img src="https://img.shields.io/badge/platform-Windows%20%7C%20macOS%20%7C%20Linux-blue" alt="Windows, macOS and Linux"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green" alt="MIT license"></a>
 </p>
 
 https://github.com/user-attachments/assets/e57728f4-fb63-441f-839c-174eef954b17
@@ -170,8 +154,8 @@ Each network needs its own internet connection to add bandwidth. NetFlo combines
 You need Node.js 22.13 or later and npm 9 or later.
 
 ```bash
-git clone https://github.com/anmolkapil/plexo.git
-cd plexo
+git clone https://github.com/VHARD6/NetFlo.git
+cd NetFlo
 npm ci
 npm run dev
 ```

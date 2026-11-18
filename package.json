@@ -5,7 +5,11 @@
   "description": "Speed up downloads by combining multiple network connections in parallel",
   "main": "./out/main/index.js",
   "author": "Anmol Kapil, NetFlo Contributors",
-  "homepage": "https://github.com/anmolkapil/plexo",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VHARD6/NetFlo.git"
+  },
+  "homepage": "https://github.com/VHARD6/NetFlo",
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",

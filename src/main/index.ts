@@ -13,6 +13,7 @@ import { join } from 'path'
 import icon from '../../resources/icon-dark.png?asset'
 import { registerIpcHandlers } from './ipc/handlers'
 import { keepsRunningForBrowser, startBridge } from './browserBridge'
+import { netfloBridge } from './network/netfloBridge'
 import { acceptedLink, bringForward, linkFromArgs, offerLink } from './openLinks'
 import { loadSettings, loadThemeSource, migrateLegacyNetworkPreferences } from './settings'
 import { startUpdater } from './updater'
@@ -243,6 +244,7 @@ app.whenReady().then(async () => {
   createWindow()
   if (testKnobs.hideWindow) app.dock?.hide()
   startUpdater(() => mainWindow, (await loadSettings()).autoUpdate !== false)
+  netfloBridge.start()
 
   app.on('activate', function () {
     if (mainWindow && !mainWindow.isDestroyed()) {
@@ -256,6 +258,7 @@ app.whenReady().then(async () => {
 })
 
 app.on('before-quit', (event) => {
+  netfloBridge.stop()
   isQuitting = true
   if (quitAfterSuspending || !downloadManager) return
 
